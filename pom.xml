@@ -19,27 +19,15 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <!-->mvn versions:use-latest-versions<-->
+  <!-->mvn versions:use-latest-versions< -->
   <build>
     <plugins>
-    <!-->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.8.1</version>
-        <configuration>
-          <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-          <docletArtifact>
-            <groupId>org.umlgraph</groupId>
-            <artifactId>doclet</artifactId>
-            <version>5.1</version>
-          </docletArtifact>
-          <additionalparam>-all</additionalparam>
-          <destDir>target/uml</destDir>
-          <show>private</show>
-        </configuration>
-      </plugin>
-      <-->
+      <!--> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-javadoc-plugin</artifactId> 
+				<version>2.8.1</version> <configuration> <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet> 
+				<docletArtifact> <groupId>org.umlgraph</groupId> <artifactId>doclet</artifactId> 
+				<version>5.1</version> </docletArtifact> <additionalparam>-all</additionalparam> 
+				<destDir>target/uml</destDir> <show>private</show> </configuration> </plugin> 
+				< -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
@@ -77,7 +65,7 @@
             <goals>
               <goal>site</goal>
             </goals>
-            <phase>clean</phase>
+            <!--> <phase>clean</phase> < -->
           </execution>
         </executions>
       </plugin>
@@ -88,7 +76,7 @@
       </plugin>
       <plugin>
         <groupId>com.google.code.sortpom</groupId>
-        <!-->mvn com.google.code.sortpom:maven-sortpom-plugin:sort<-->
+        <!-->mvn com.google.code.sortpom:maven-sortpom-plugin:sort< -->
         <artifactId>maven-sortpom-plugin</artifactId>
         <version>1.1.0</version>
         <configuration>
@@ -108,6 +96,54 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
         <version>2.0</version>
+      </plugin>
+      <plugin>
+        <groupId>com.nayidisha.plugins</groupId>
+        <artifactId>maven-ndjacobe-plugin</artifactId>
+        <version>1.0.0</version>
+        <configuration>
+          <!-- Mandatory parameters used by all goals -->
+          <!-- location of Jacobe executable -->
+          <jacobeExecutable>C:\jacobe\jacobe.exe</jacobeExecutable>
+          <!-- location of Jacobe configuration file -->
+          <configurationFile>C:\jacobe\sun.cfg</configurationFile>
+          <!-- directory containing .java files -->
+          <input>${basedir}/src/main/java</input>
+          <!-- Optional parameters used by the format goal -->
+          <comparisonThreshold>0.01</comparisonThreshold>
+          <javadoc>private</javadoc>
+          <noAssert>false</noAssert>
+          <noEnum>false</noEnum>
+          <noBackup>true</noBackup>
+          <!-- should the original file be overwritten -->
+          <overwrite>true</overwrite>
+          <!-- Optional Parameters used by the check goal -->
+          <failOnError>false</failOnError>
+          <keepJacobeFileForFailedMatches>true</keepJacobeFileForFailedMatches>
+        </configuration>
+        <executions>
+          <execution>
+            <id>format</id>
+            <goals>
+              <goal>format</goal>
+            </goals>
+            <phase>compile</phase>
+          </execution>
+          <execution>
+            <id>check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>verify</phase>
+          </execution>
+          <execution>
+            <id>clean</id>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+            <phase>clean</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
