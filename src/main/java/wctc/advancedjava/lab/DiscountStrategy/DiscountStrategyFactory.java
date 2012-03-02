@@ -1,5 +1,6 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
+
 /**
  * Factory to create DiscountStrategy objects.
  *
@@ -9,8 +10,7 @@ public class DiscountStrategyFactory {
 
     private DiscountStrategyFactory instance;
 
-    private DiscountStrategyFactory() {
-    }
+    private DiscountStrategyFactory() {}
 
     public DiscountStrategyFactory getInstance() {
 
@@ -18,7 +18,6 @@ public class DiscountStrategyFactory {
             instance = new DiscountStrategyFactory();
         }
         return instance;
-
 
     }
 }

@@ -1,6 +1,8 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
+
 import wctc.advancedjava.lab.util.ResizeArray;
+
 
 /**
  * The Receipt class hold the "invoice" information about the sale, but is more
@@ -14,65 +16,67 @@ import wctc.advancedjava.lab.util.ResizeArray;
  */
 public class Receipt {
 
-	private LineItem[] lineItems;
-	private Customer customer;
-	private double saleTotal;
+    private LineItem[] lineItems;
+    private Customer customer;
+    private double saleTotal;
 
-	public Receipt(String customerId) {
-		Customer cust = CustomerDb.findCustomer(customerId);
-		setCustomer(cust);
-		lineItems = new LineItem[0];
-	}
+    public Receipt(String customerId) {
+        Customer cust = CustomerDb.findCustomer(customerId);
 
-	public final LineItem[] getLineItems() {
-		return lineItems;
-	}
+        setCustomer(cust);
+        lineItems = new LineItem[0];
+    }
 
-	public final void setLineItems(LineItem[] lineItems) {
-		this.lineItems = lineItems;
-	}
+    public final LineItem[] getLineItems() {
+        return lineItems;
+    }
 
-	public final Customer getCustomer() {
-		return customer;
-	}
+    public final void setLineItems(LineItem[] lineItems) {
+        this.lineItems = lineItems;
+    }
 
-	public final void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+    public final Customer getCustomer() {
+        return customer;
+    }
 
-	public final double getSaleTotal() {
-		return saleTotal;
-	}
+    public final void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
-	/**
-	 * Can also be used to manually over-ride sale (with manager's permission).
-	 * 
-	 * @param saleTotal
-	 */
-	public final void setSaleTotal(double saleTotal) {
-		this.saleTotal = saleTotal;
-	}
+    public final double getSaleTotal() {
+        return saleTotal;
+    }
 
-	/**
-	 * Reset sale total in the event an error was made (i.e. via manual
-	 * over-rides).
-	 */
-	public final void resetSaleTotal() {
+    /**
+     * Can also be used to manually over-ride sale (with manager's permission).
+     * 
+     * @param saleTotal
+     */
+    public final void setSaleTotal(double saleTotal) {
+        this.saleTotal = saleTotal;
+    }
 
-		double total = 0.0;
+    /**
+     * Reset sale total in the event an error was made (i.e. via manual
+     * over-rides).
+     */
+    public final void resetSaleTotal() {
 
-		for (LineItem lineItem : lineItems) {
-			total += lineItem.getSubTotal();
-		}
+        double total = 0.0;
 
-		setSaleTotal(total);
+        for (LineItem lineItem : lineItems) {
+            total += lineItem.getSubTotal();
+        }
 
-	}
+        setSaleTotal(total);
 
-	public final void addProduct(String productId, double quantity) {
-		LineItem lineItem = new LineItem(productId, quantity);
-		setLineItems(ResizeArray.addItem(lineItems, lineItem));
-		setSaleTotal(getSaleTotal() + lineItem.getSubTotal());
-	}
+    }
+
+    public final void addProduct(String productId, double quantity) {
+        LineItem lineItem = new LineItem(productId, quantity);
+
+        setLineItems(ResizeArray.addItem(lineItems, lineItem));
+        setSaleTotal(getSaleTotal() + lineItem.getSubTotal());
+    }
 
 }

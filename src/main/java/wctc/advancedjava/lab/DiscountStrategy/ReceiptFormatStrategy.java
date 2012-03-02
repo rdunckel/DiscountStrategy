@@ -1,5 +1,6 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
+
 /**
  * Interface to define behavior for formatting output.
  * 
@@ -7,6 +8,6 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public interface ReceiptFormatStrategy {
 
-	public abstract String formatOutput(Receipt receipt);
+    public abstract String formatOutput(Receipt receipt);
 
 }

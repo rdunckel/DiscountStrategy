@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1_0" href="./QuantityDiscount.html" title="wctc.advancedjava.lab.DiscountStrategy.QuantityDiscount" alt="" coords="15,470,411,575"/>
-<area shape="rect" id="node2_1" href="./Product.html" title="wctc.advancedjava.lab.DiscountStrategy.Product" alt="" coords="911,11,1281,261"/>
-<area shape="rect" id="node6_2" href="./DiscountStrategy.html" title="wctc.advancedjava.lab.DiscountStrategy.DiscountStrategy" alt="" coords="898,321,1294,410"/>
-<area shape="rect" id="node3_3" href="./PercentageDiscount.html" title="wctc.advancedjava.lab.DiscountStrategy.PercentageDiscount" alt="" coords="457,470,853,575"/>
-<area shape="rect" id="node4_4" href="./NoDiscount.html" title="wctc.advancedjava.lab.DiscountStrategy.NoDiscount" alt="" coords="898,470,1294,575"/>
-<area shape="rect" id="node5_5" href="./FlatDiscount.html" title="wctc.advancedjava.lab.DiscountStrategy.FlatDiscount" alt="" coords="1339,470,1735,575"/>
-<area shape="rect" id="node7_6" href="./BuyOneGetOneDiscount.html" title="wctc.advancedjava.lab.DiscountStrategy.BuyOneGetOneDiscount" alt="" coords="1781,470,2177,575"/>
-</map>

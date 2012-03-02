@@ -127,7 +127,7 @@
             <goals>
               <goal>format</goal>
             </goals>
-            <phase>compile</phase>
+            <phase>build</phase>
           </execution>
           <execution>
             <id>check</id>
