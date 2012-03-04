@@ -5,6 +5,7 @@ package wctc.advancedjava.lab.DiscountStrategy;
  * 
  * @author Ryan Dunckel
  */
+// NOSONAR
 public class ProductDb {
 
 	private static Product[] productList = new Product[5];
