@@ -1,9 +1,6 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
 import java.util.Arrays;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
 import wctc.advancedjava.lab.util.ResizeArray;
 
 /**
