@@ -7,9 +7,9 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public class QuantityDiscount implements DiscountStrategy {
 
-	private static double PERCENT_DISCOUNT = 0.10;
-	private static double MIN_QUANTITY = 3;
-	private static double NO_DISCOUNT = 0.00;
+	private static final double PERCENT_DISCOUNT = 0.10;
+	private static final double MIN_QUANTITY = 3;
+	private static final double NO_DISCOUNT = 0.00;
 
 	public final double calculateDiscount(double unitCost, double quantity) {
 
@@ -25,6 +25,7 @@ public class QuantityDiscount implements DiscountStrategy {
 
 	}
 
+	@SuppressWarnings("all")
 	public static void main(String[] args) {
 
 		double discount = 0.00;

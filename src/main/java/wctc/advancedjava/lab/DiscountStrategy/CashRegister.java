@@ -42,7 +42,7 @@ public class CashRegister {
 	public final void printReceipt() {
 
 		receiptFormatStrategy = new ReceiptFormat1();
-		System.out.println(receiptFormatStrategy.formatOutput(receipt));
+		System.out.println(receiptFormatStrategy.formatOutput(receipt)); //NOSONAR
 
 	}
 

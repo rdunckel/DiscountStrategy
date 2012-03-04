@@ -7,7 +7,7 @@ package wctc.advancedjava.lab.DiscountStrategy;
  * @see CashRegister
  * @author Ryan Dunckel
  */
-public class Startup {
+public final class Startup {
 
 	// Private constructor for Startup class.
 	private Startup() {

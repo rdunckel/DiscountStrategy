@@ -5,7 +5,7 @@ import wctc.advancedjava.lab.DiscountStrategy.LineItem;
 /**
  * Utility class for resizing arrays (versus using Lists).
  */
-public class ResizeArray {
+public final class ResizeArray {
 
 	// Private constructor for utility class.
 	private ResizeArray() {

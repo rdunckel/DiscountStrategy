@@ -7,8 +7,8 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public class FlatDiscount implements DiscountStrategy {
 
-	private static double FLAT_DISCOUNT = 5.00;
-	private static double NO_DISCOUNT = 0.00;
+	private static final double FLAT_DISCOUNT = 5.00;
+	private static final double NO_DISCOUNT = 0.00;
 
 	public final double calculateDiscount(double unitCost, double quantity) {
 
@@ -25,6 +25,7 @@ public class FlatDiscount implements DiscountStrategy {
 
 	}
 
+	@SuppressWarnings("all")
 	public static void main(String[] args) {
 
 		double discount = 0.00;

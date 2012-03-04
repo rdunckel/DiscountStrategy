@@ -13,6 +13,7 @@ public class NoDiscount implements DiscountStrategy {
 
 	}
 
+	@SuppressWarnings("all")
 	public static void main(String[] args) {
 
 		double discount = 0.00;
