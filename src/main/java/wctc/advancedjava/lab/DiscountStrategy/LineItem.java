@@ -17,7 +17,7 @@ public class LineItem {
 	private double subTotal;
 
 	public LineItem(String productId, double quantity) {
-		product = ProductDb.findProduct(productId);
+		product = ProductFactory.findProduct(productId);
 		setQuantity(quantity);
 		setDiscount(calculateDiscount());
 		setSubTotal(calculateSubTotal());
