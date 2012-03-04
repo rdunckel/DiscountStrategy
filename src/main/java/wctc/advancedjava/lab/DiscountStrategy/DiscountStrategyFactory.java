@@ -7,8 +7,9 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public class DiscountStrategyFactory {
 
-	private DiscountStrategyFactory instance;
+	private static DiscountStrategyFactory instance;
 
+	// Private constructor for Singleton.
 	private DiscountStrategyFactory() {
 	}
 
@@ -17,7 +18,7 @@ public class DiscountStrategyFactory {
 	 * 
 	 * @return
 	 */
-	public DiscountStrategyFactory getInstance() {
+	public static DiscountStrategyFactory getInstance() {
 
 		if (instance == null) {
 			instance = new DiscountStrategyFactory();

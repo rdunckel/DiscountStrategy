@@ -1,8 +1,10 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
+import java.util.Arrays;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 import wctc.advancedjava.lab.util.ResizeArray;
-
 
 /**
  * The Receipt class hold the "invoice" information about the sale, but is more
@@ -16,67 +18,67 @@ import wctc.advancedjava.lab.util.ResizeArray;
  */
 public class Receipt {
 
-    private LineItem[] lineItems;
-    private Customer customer;
-    private double saleTotal;
+	private LineItem[] lineItems;
+	private Customer customer;
+	private double saleTotal;
 
-    public Receipt(String customerId) {
-        Customer cust = CustomerDb.findCustomer(customerId);
+	public Receipt(String customerId) {
+		Customer cust = CustomerDb.findCustomer(customerId);
 
-        setCustomer(cust);
-        lineItems = new LineItem[0];
-    }
+		setCustomer(cust);
+		lineItems = new LineItem[0];
+	}
 
-    public final LineItem[] getLineItems() {
-        return lineItems;
-    }
+	public final LineItem[] getLineItems() {
+		return lineItems;
+	}
 
-    public final void setLineItems(LineItem[] lineItems) {
-        this.lineItems = lineItems;
-    }
+	public final void setLineItems(LineItem[] lineItems) {
+		this.lineItems = Arrays.copyOf(lineItems, lineItems.length);
+	}
 
-    public final Customer getCustomer() {
-        return customer;
-    }
+	public final Customer getCustomer() {
+		return customer;
+	}
 
-    public final void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+	public final void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
-    public final double getSaleTotal() {
-        return saleTotal;
-    }
+	public final double getSaleTotal() {
+		return saleTotal;
+	}
 
-    /**
-     * Can also be used to manually over-ride sale (with manager's permission).
-     * 
-     * @param saleTotal
-     */
-    public final void setSaleTotal(double saleTotal) {
-        this.saleTotal = saleTotal;
-    }
+	/**
+	 * Can also be used to manually over-ride sale (with manager's permission).
+	 * 
+	 * @param saleTotal
+	 */
+	public final void setSaleTotal(double saleTotal) {
+		this.saleTotal = saleTotal;
+	}
 
-    /**
-     * Reset sale total in the event an error was made (i.e. via manual
-     * over-rides).
-     */
-    public final void resetSaleTotal() {
+	/**
+	 * Reset sale total in the event an error was made (i.e. via manual
+	 * over-rides).
+	 */
+	public final void resetSaleTotal() {
 
-        double total = 0.0;
+		double total = 0.0;
 
-        for (LineItem lineItem : lineItems) {
-            total += lineItem.getSubTotal();
-        }
+		for (LineItem lineItem : lineItems) {
+			total += lineItem.getSubTotal();
+		}
 
-        setSaleTotal(total);
+		setSaleTotal(total);
 
-    }
+	}
 
-    public final void addProduct(String productId, double quantity) {
-        LineItem lineItem = new LineItem(productId, quantity);
+	public final void addProduct(String productId, double quantity) {
+		LineItem lineItem = new LineItem(productId, quantity);
 
-        setLineItems(ResizeArray.addItem(lineItems, lineItem));
-        setSaleTotal(getSaleTotal() + lineItem.getSubTotal());
-    }
+		setLineItems(ResizeArray.addItem(lineItems, lineItem));
+		setSaleTotal(getSaleTotal() + lineItem.getSubTotal());
+	}
 
 }
