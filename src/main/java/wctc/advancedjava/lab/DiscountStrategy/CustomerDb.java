@@ -5,6 +5,7 @@ package wctc.advancedjava.lab.DiscountStrategy;
  * 
  * @author Ryan Dunckel
  */
+@SuppressWarnings("all")
 public class CustomerDb {
 
 	private static Customer[] customerList = new Customer[4];
