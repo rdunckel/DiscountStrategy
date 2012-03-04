@@ -29,11 +29,11 @@ public final class Startup {
 		// C158 - Khaki Pants
 		// D489 - Pyrex Bowl
 		// E567 - Stand Mixer
-		cashRegister.addProduct("A102", 1);
-		cashRegister.addProduct("B214", 2);
-		cashRegister.addProduct("C158", 3);
-		cashRegister.addProduct("D489", 14);
-		cashRegister.addProduct("E567", 1);
+		cashRegister.addProduct("A102", 1); // NOSONAR
+		cashRegister.addProduct("B214", 2); // NOSONAR
+		cashRegister.addProduct("C158", 3); // NOSONAR
+		cashRegister.addProduct("D489", 14); // NOSONAR
+		cashRegister.addProduct("E567", 1); // NOSONAR
 
 		cashRegister.finalizeSale();
 

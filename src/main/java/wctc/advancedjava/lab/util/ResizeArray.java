@@ -1,7 +1,5 @@
 package wctc.advancedjava.lab.util;
 
-import wctc.advancedjava.lab.DiscountStrategy.LineItem;
-
 /**
  * Utility class for resizing arrays (versus using Lists).
  */
@@ -17,8 +15,8 @@ public final class ResizeArray {
 	 * 
 	 * @param item
 	 */
-	public static LineItem[] addItem(LineItem[] array, LineItem item) {
-		LineItem[] temp = new LineItem[array.length + 1];
+	public static Object addItem(Object[] array, Object item) {
+		Object[] temp = new Object[array.length + 1];
 
 		System.arraycopy(array, 0, temp, 0, array.length);
 		temp[temp.length - 1] = item;
@@ -30,8 +28,8 @@ public final class ResizeArray {
 	 * 
 	 * @param item
 	 */
-	public static LineItem[] removeItem(LineItem[] array, LineItem item) {
-		LineItem[] temp = new LineItem[array.length - 1];
+	public static Object removeItem(Object[] array, Object item) {
+		Object[] temp = new Object[array.length - 1];
 
 		for (int i = 0, j = 0; j < array.length; i++, j++) {
 			// if (array[j].equalsIgnoreCase(item)) {

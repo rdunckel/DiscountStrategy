@@ -74,7 +74,7 @@ public class Receipt {
 	public final void addProduct(String productId, double quantity) {
 		LineItem lineItem = new LineItem(productId, quantity);
 
-		setLineItems(ResizeArray.addItem(lineItems, lineItem));
+		setLineItems((LineItem[]) ResizeArray.addItem(lineItems, lineItem));
 		setSaleTotal(getSaleTotal() + lineItem.getSubTotal());
 	}
 
