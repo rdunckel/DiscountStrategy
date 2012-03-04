@@ -1,6 +1,5 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
-
 /**
  * No discount at all.
  * 
@@ -8,21 +7,21 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public class NoDiscount implements DiscountStrategy {
 
-    public final double calculateDiscount(double unitCost, double quantity) {
+	public final double calculateDiscount(double unitCost, double quantity) {
 
-        return 0.0;
+		return 0.0;
 
-    }
+	}
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        double discount = 0.00;
+		double discount = 0.00;
 
-        NoDiscount noDiscount = new NoDiscount();
+		NoDiscount noDiscount = new NoDiscount();
 
-        discount = noDiscount.calculateDiscount(10, 9);
+		discount = noDiscount.calculateDiscount(10, 9);
 
-        System.out.println("Discount = " + discount);
+		System.out.println("Discount = " + discount);
 
-    }
+	}
 }

@@ -21,7 +21,7 @@ public class CustomerDb {
 		customerList[3] = new Customer("4489", "Bailey Dunckel");
 	}
 
-	public final static Customer findCustomer(String customerId) {
+	public static final Customer findCustomer(String customerId) {
 
 		Customer cust = null;
 

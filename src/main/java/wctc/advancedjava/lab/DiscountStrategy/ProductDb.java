@@ -42,7 +42,7 @@ public class ProductDb {
 		productList[4].setDiscountStrategy(new PercentageDiscount());
 	}
 
-	public final static Product findProduct(String productId) {
+	public static final Product findProduct(String productId) {
 
 		Product prod = null;
 

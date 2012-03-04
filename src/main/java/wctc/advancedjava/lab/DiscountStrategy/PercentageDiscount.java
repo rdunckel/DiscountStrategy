@@ -1,6 +1,5 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
-
 /**
  * Percentage discount off of product.
  * 
@@ -8,23 +7,25 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public class PercentageDiscount implements DiscountStrategy {
 
-    public final double calculateDiscount(double unitCost, double quantity) {
+	private static double PERCENT_DISCOUNT = 0.20;
 
-        double discountPercent = 0.20;
+	public final double calculateDiscount(double unitCost, double quantity) {
 
-        return unitCost * quantity * discountPercent;
+		double discountPercent = PERCENT_DISCOUNT;
 
-    }
+		return unitCost * quantity * discountPercent;
 
-    public static void main(String[] args) {
+	}
 
-        double discount = 0.00;
+	public static void main(String[] args) {
 
-        PercentageDiscount percDiscount = new PercentageDiscount();
+		double discount = 0.00;
 
-        discount = percDiscount.calculateDiscount(10, 9);
+		PercentageDiscount percDiscount = new PercentageDiscount();
 
-        System.out.println("Discount = " + discount);
+		discount = percDiscount.calculateDiscount(10, 9);
 
-    }
+		System.out.println("Discount = " + discount);
+
+	}
 }

@@ -1,6 +1,5 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
-
 /**
  * Discount received after purchasing so many of one item.
  * 
@@ -8,30 +7,33 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public class QuantityDiscount implements DiscountStrategy {
 
-    public final double calculateDiscount(double unitCost, double quantity) {
+	private static double PERCENT_DISCOUNT = 0.10;
+	private static double MIN_QUANTITY = 3;
+	private static double NO_DISCOUNT = 0.00;
 
-        double discountPercent = 0.10;
-        double discount = 0.00;
+	public final double calculateDiscount(double unitCost, double quantity) {
 
-        if (quantity > 2) {
-            discount = unitCost * discountPercent * quantity;
-        } else {
-            discount = 0.00;
-        }
+		double discount = 0.00;
 
-        return discount;
+		if (quantity >= MIN_QUANTITY) {
+			discount = unitCost * PERCENT_DISCOUNT * quantity;
+		} else {
+			discount = NO_DISCOUNT;
+		}
 
-    }
+		return discount;
 
-    public static void main(String[] args) {
+	}
 
-        double discount = 0.00;
+	public static void main(String[] args) {
 
-        QuantityDiscount qtyDiscount = new QuantityDiscount();
+		double discount = 0.00;
 
-        discount = qtyDiscount.calculateDiscount(10, 9);
+		QuantityDiscount qtyDiscount = new QuantityDiscount();
 
-        System.out.println("Discount = " + discount);
+		discount = qtyDiscount.calculateDiscount(10, 9);
 
-    }
+		System.out.println("Discount = " + discount);
+
+	}
 }

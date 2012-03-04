@@ -1,6 +1,5 @@
 package wctc.advancedjava.lab.DiscountStrategy;
 
-
 /**
  * Flat rate discount if total purchase is over a certain dollar amount.
  * 
@@ -8,31 +7,34 @@ package wctc.advancedjava.lab.DiscountStrategy;
  */
 public class FlatDiscount implements DiscountStrategy {
 
-    public final double calculateDiscount(double unitCost, double quantity) {
+	private static double FLAT_DISCOUNT = 5.00;
+	private static double NO_DISCOUNT = 0.00;
 
-        double discount = 0.00;
-        double grossTotal = unitCost * quantity;
+	public final double calculateDiscount(double unitCost, double quantity) {
 
-        if (grossTotal > 5) {
-            discount = 5.00;
-        } else {
-            discount = 0.00;
-        }
+		double discount = 0.00;
+		double grossTotal = unitCost * quantity;
 
-        return discount;
+		if (grossTotal > FLAT_DISCOUNT) {
+			discount = FLAT_DISCOUNT;
+		} else {
+			discount = NO_DISCOUNT;
+		}
 
-    }
+		return discount;
 
-    public static void main(String[] args) {
+	}
 
-        double discount = 0.00;
+	public static void main(String[] args) {
 
-        FlatDiscount flatDiscount = new FlatDiscount();
+		double discount = 0.00;
 
-        discount = flatDiscount.calculateDiscount(10, 9);
+		FlatDiscount flatDiscount = new FlatDiscount();
 
-        System.out.println("Discount = " + discount);
+		discount = flatDiscount.calculateDiscount(10, 9);
 
-    }
+		System.out.println("Discount = " + discount);
+
+	}
 
 }
