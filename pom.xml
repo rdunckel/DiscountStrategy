@@ -6,11 +6,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>DiscountStrategy</name>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.host.url>http://tivoliserver:9000</sonar.host.url>
-    <sonar.jdbc.url>jdbc://tivoiliserver:9000/sonar</sonar.jdbc.url>
+    <sonar.jdbc.url>jdbc:mysql://localhost:3306/sonar</sonar.jdbc.url>
+    <sonar.jdbc.username>sonar</sonar.jdbc.username>
+    <sonar.jdbc.password>sonar</sonar.jdbc.password> 
   </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -103,10 +107,14 @@
         <version>1.0.0</version>
         <configuration>
           <!-- Mandatory parameters used by all goals -->
-          <!-- location of Jacobe executable -->
+          <!-- location of Jacobe executable
           <jacobeExecutable>C:\jacobe\jacobe.exe</jacobeExecutable>
-          <!-- location of Jacobe configuration file -->
+		  -->
+          <jacobeExecutable>${jacobe.exe}</jacobeExecutable>
+          <!-- location of Jacobe configuration file 
           <configurationFile>C:\jacobe\sun.cfg</configurationFile>
+		  -->
+          <configurationFile>${jacobe.conf}</configurationFile>
           <!-- directory containing .java files -->
           <input>${basedir}/src/main/java</input>
           <!-- Optional parameters used by the format goal -->
@@ -127,7 +135,7 @@
             <goals>
               <goal>format</goal>
             </goals>
-            <phase>compile</phase>
+            <phase>build</phase>
           </execution>
           <execution>
             <id>check</id>
@@ -149,3 +157,4 @@
   </build>
   <url>http://maven.apache.org</url>
 </project>
+
