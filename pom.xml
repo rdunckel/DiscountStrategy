@@ -103,10 +103,14 @@
         <version>1.0.0</version>
         <configuration>
           <!-- Mandatory parameters used by all goals -->
-          <!-- location of Jacobe executable -->
+          <!-- location of Jacobe executable
           <jacobeExecutable>C:\jacobe\jacobe.exe</jacobeExecutable>
-          <!-- location of Jacobe configuration file -->
+		  -->
+          <jacobeExecutable>${jacobe.exe}</jacobeExecutable>
+          <!-- location of Jacobe configuration file 
           <configurationFile>C:\jacobe\sun.cfg</configurationFile>
+		  -->
+          <configurationFile>${jacobe.conf}</configurationFile>
           <!-- directory containing .java files -->
           <input>${basedir}/src/main/java</input>
           <!-- Optional parameters used by the format goal -->
